@@ -1,0 +1,184 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.11/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.spotifyconnector:spotify-connector >---------------
+[INFO] Building Spotify Connector 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> javafx:0.0.8:run (default-cli) > process-classes @ spotify-connector >>>
+[WARNING] 6 problems were encountered while building the effective model for org.openjfx:javafx-controls:jar:17.0.2 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ spotify-connector ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ spotify-connector ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< javafx:0.0.8:run (default-cli) < process-classes @ spotify-connector <<<
+[INFO] 
+[INFO] 
+[INFO] --- javafx:0.0.8:run (default-cli) @ spotify-connector ---
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.sun.glass.utils.NativeLibLoader in module javafx.graphics (file:/Users/jasonhe/.m2/repository/org/openjfx/javafx-graphics/17.0.2/javafx-graphics-17.0.2-mac-aarch64.jar)
+WARNING: Use --enable-native-access=javafx.graphics to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Oct 05, 2025 6:24:44 PM com.sun.glass.ui.mac.MacApplication lambda$waitForReactivation$6
+WARNING: Timeout while waiting for app reactivation
+18:24:44.586 [main] INFO  c.s.SpotifyConnectorApp - Starting Spotify Connector application...
+*** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: '0x0 is an invalid NSTrackingRectTag. Common possible reasons for this are: 1. already removed this trackingRectTag, 2. Truncated the NSTrackingRectTag to 32bit at some point.'
+*** First throw call stack:
+(
+	0   CoreFoundation                      0x0000000199a6ae80 __exceptionPreprocess + 176
+	1   libobjc.A.dylib                     0x0000000199552cd8 objc_exception_throw + 88
+	2   Foundation                          0x000000019ac79978 -[NSCalendarDate initWithCoder:] + 0
+	3   AppKit                              0x000000019ddc2b80 -[_NSTrackingAreaAKViewHelper removeTrackingRect:] + 200
+	4   libglass.dylib                      0x0000000106d7303c -[GlassViewDelegate setFrameSize:] + 360
+	5   libglass.dylib                      0x0000000106d78134 -[GlassView3D setFrameSize:] + 92
+	6   AppKit                              0x000000019d599db8 -[NSView setFrame:] + 304
+	7   libglass.dylib                      0x0000000106d78194 -[GlassView3D setFrame:] + 76
+	8   AppKit                              0x000000019d5a6908 -[NSView resizeWithOldSuperviewSize:] + 488
+	9   AppKit                              0x000000019d5a6294 -[NSView resizeSubviewsWithOldSize:] + 360
+	10  AppKit                              0x000000019d58c5c0 -[NSView setFrameSize:] + 948
+	11  AppKit                              0x000000019d599db8 -[NSView setFrame:] + 304
+	12  AppKit                              0x000000019d5a6908 -[NSView resizeWithOldSuperviewSize:] + 488
+	13  AppKit                              0x000000019d5a6294 -[NSView resizeSubviewsWithOldSize:] + 360
+	14  AppKit                              0x000000019d58c5c0 -[NSView setFrameSize:] + 948
+	15  AppKit                              0x000000019d5a53ec -[NSThemeFrame setFrameSize:] + 244
+	16  AppKit                              0x000000019d5a4d50 -[NSWindow _oldPlaceWindow:fromServer:] + 532
+	17  AppKit                              0x000000019d5a4204 -[NSWindow _setFrameCommon:display:fromServer:] + 2032
+	18  libglass.dylib                      0x0000000106d83150 Java_com_sun_glass_ui_mac_MacWindow__1setBounds2 + 416
+	19  ???                                 0x0000000117e90500 0x0 + 4696114432
+	20  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	21  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	22  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	23  ???                                 0x0000000117e8cef0 0x0 + 4696100592
+	24  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	25  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	26  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	27  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	28  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	29  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	30  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	31  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	32  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	33  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	34  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	35  ???                                 0x0000000117e8cef0 0x0 + 4696100592
+	36  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	37  ???                                 0x0000000117e8cef0 0x0 + 4696100592
+	38  ???                                 0x0000000117e8c6e0 0x0 + 4696098528
+	39  ???                                 0x0000000117e8cc80 0x0 + 4696099968
+	40  ???                                 0x0000000117e8c6e0 0x0 + 4696098528
+	41  ???                                 0x0000000117e8c950 0x0 + 4696099152
+	42  ???                                 0x0000000117e8cef0 0x0 + 4696100592
+	43  ???                                 0x0000000117e88114 0x0 + 4696080660
+	44  libjvm.dylib                        0x0000000107353ba0 _ZN9JavaCalls11call_helperEP9JavaValueRK12methodHandleP17JavaCallArgumentsP10JavaThread + 596
+	45  libjvm.dylib                        0x00000001073b6df0 _ZL20jni_invoke_nonstaticP7JNIEnv_P9JavaValueP8_jobject11JNICallTypeP10_jmethodIDP18JNI_ArgumentPusherP10JavaThread + 688
+	46  libjvm.dylib                        0x00000001073ba788 jni_CallVoidMethod + 212
+	47  libglass.dylib                      0x0000000106d6ea58 -[GlassRunnable run] + 92
+	48  Foundation                          0x000000019abe4f80 __NSThreadPerformPerform + 264
+	49  CoreFoundation                      0x00000001999f8894 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 28
+	50  CoreFoundation                      0x00000001999f8828 __CFRunLoopDoSource0 + 176
+	51  CoreFoundation                      0x00000001999f858c __CFRunLoopDoSources0 + 244
+	52  CoreFoundation                      0x00000001999f7128 __CFRunLoopRun + 840
+	53  CoreFoundation                      0x00000001999f6724 CFRunLoopRunSpecific + 588
+	54  HIToolbox                           0x00000001a4f4e530 RunCurrentEventLoopInMode + 292
+	55  HIToolbox                           0x00000001a4f54348 ReceiveNextEventCommon + 676
+	56  HIToolbox                           0x00000001a4f54508 _BlockUntilNextEventMatchingListInModeWithFilter + 76
+	57  AppKit                              0x000000019d561034 _DPSNextEvent + 660
+	58  AppKit                              0x000000019dec52d4 -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 688
+	59  AppKit                              0x000000019d554060 -[NSApplication run] + 480
+	60  libglass.dylib                      0x0000000106d70be0 -[GlassApplication runLoop:] + 1996
+	61  Foundation                          0x000000019abe4f80 __NSThreadPerformPerform + 264
+	62  CoreFoundation                      0x00000001999f8894 __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 28
+	63  CoreFoundation                      0x00000001999f8828 __CFRunLoopDoSource0 + 176
+	64  CoreFoundation                      0x00000001999f858c __CFRunLoopDoSources0 + 244
+	65  CoreFoundation                      0x00000001999f7128 __CFRunLoopRun + 840
+	66  CoreFoundation                      0x00000001999f6724 CFRunLoopRunSpecific + 588
+	67  libjli.dylib                        0x000000010051fdc0 CreateExecutionEnvironment + 408
+	68  libjli.dylib                        0x000000010051bdbc JLI_Launch + 584
+	69  java                                0x00000001004e2184 main + 388
+	70  dyld                                0x0000000199590274 start + 2840
+)
+libc++abi: terminating due to uncaught exception of type NSException
+[ERROR] Command execution failed.
+org.apache.commons.exec.ExecuteException: Process exited with an error: 134 (Exit value: 134)
+    at org.apache.commons.exec.DefaultExecutor.executeInternal (DefaultExecutor.java:404)
+    at org.apache.commons.exec.DefaultExecutor.execute (DefaultExecutor.java:166)
+    at org.openjfx.JavaFXBaseMojo.executeCommandLine (JavaFXBaseMojo.java:567)
+    at org.openjfx.JavaFXBaseMojo.executeCommandLine (JavaFXBaseMojo.java:434)
+    at org.openjfx.JavaFXRunMojo.execute (JavaFXRunMojo.java:105)
+    at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo (DefaultBuildPluginManager.java:126)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 (MojoExecutor.java:328)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:316)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:212)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:174)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.access$000 (MojoExecutor.java:75)
+    at org.apache.maven.lifecycle.internal.MojoExecutor$1.run (MojoExecutor.java:162)
+    at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute (DefaultMojosExecutionStrategy.java:39)
+    at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:159)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:105)
+    at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:73)
+    at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:53)
+    at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:118)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:261)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:104)
+    at java.lang.reflect.Method.invoke (Method.java:565)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+org.apache.commons.exec.ExecuteException: Process exited with an error: 134 (Exit value: 134)
+	at org.apache.commons.exec.DefaultExecutor.executeInternal(DefaultExecutor.java:404)
+	at org.apache.commons.exec.DefaultExecutor.execute(DefaultExecutor.java:166)
+	at org.openjfx.JavaFXBaseMojo.executeCommandLine(JavaFXBaseMojo.java:567)
+	at org.openjfx.JavaFXBaseMojo.executeCommandLine(JavaFXBaseMojo.java:434)
+	at org.openjfx.JavaFXRunMojo.execute(JavaFXRunMojo.java:105)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:255)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.183 s
+[INFO] Finished at: 2025-10-05T18:24:45-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.openjfx:javafx-maven-plugin:0.0.8:run (default-cli) on project spotify-connector: Error: Command execution failed. Process exited with an error: 134 (Exit value: 134) -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

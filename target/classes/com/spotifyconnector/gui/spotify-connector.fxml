@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spotifyconnector.gui.SpotifyConnectorController">
+   <stylesheets>
+      <String fx:value="@styles.css" />
+   </stylesheets>
+   <center>
+      <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" styleClass="modern-tab-pane">
+         <tabs>
+            <Tab fx:id="loginTab" text="🔐 Authentication">
+               <content>
+                  <ScrollPane fitToWidth="true" fitToHeight="true">
+                     <VBox fx:id="loginContainer" alignment="CENTER" spacing="20.0" styleClass="login-container">
+                        <padding>
+                           <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                        </padding>
+                        <children>
+                           <VBox alignment="CENTER" spacing="10.0">
+                              <Label styleClass="app-title" text="🎵 Spotify Connector" />
+                              <Label styleClass="app-subtitle" text="Connect to your Spotify account and explore your music data" />
+                           </VBox>
+                           
+                           <Separator styleClass="modern-separator" />
+                           
+                           <VBox fx:id="statusContainer" alignment="CENTER" spacing="10.0">
+                              <Label fx:id="statusLabel" styleClass="status-label" text="Ready to connect" />
+                           </VBox>
+                           
+                           <VBox styleClass="config-section" spacing="15.0">
+                              <Label styleClass="section-title" text="⚙️ Configuration" />
+                              <GridPane hgap="15.0" vgap="15.0" styleClass="config-grid">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="120.0" prefWidth="120.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label styleClass="field-label" text="Client ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                    <TextField fx:id="clientIdField" styleClass="modern-text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                    <Label styleClass="field-label" text="Client Secret:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                    <PasswordField fx:id="clientSecretField" styleClass="modern-text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label styleClass="field-label" text="Redirect URI:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                    <TextField fx:id="redirectUriField" styleClass="modern-text-field" text="http://127.0.0.1:8080/callback" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </VBox>
+                           
+                           <Button fx:id="loginButton" styleClass="primary-button" mnemonicParsing="false" text="🔗 Open Spotify Authorization" />
+                           
+                           <VBox styleClass="auth-section" spacing="15.0">
+                              <Label styleClass="section-title" text="🔑 Authorization Code" />
+                              <TextArea fx:id="authCodeArea" styleClass="modern-text-area" prefRowCount="4" promptText="Authorization code will appear here automatically..." />
+                              <Button fx:id="connectButton" styleClass="success-button" mnemonicParsing="false" text="✅ Connect to Spotify" />
+                           </VBox>
+                        </children>
+                     </VBox>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            
+            <Tab fx:id="recentlyPlayedTab" text="🎵 Recently Played">
+               <content>
+                  <VBox spacing="15.0" styleClass="data-container">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <Label styleClass="section-title" text="🎵 Recently Played Tracks" />
+                           <ComboBox fx:id="recentLimitCombo" styleClass="modern-combo" />
+                           <Button fx:id="refreshRecentButton" styleClass="refresh-button" mnemonicParsing="false" text="🔄 Refresh" />
+                        </HBox>
+                        <TableView fx:id="recentlyPlayedTable" styleClass="modern-table">
+                           <columns>
+                              <TableColumn fx:id="trackNameColumn" prefWidth="200.0" text="Track" />
+                              <TableColumn fx:id="artistNameColumn" prefWidth="150.0" text="Artist" />
+                              <TableColumn fx:id="albumNameColumn" prefWidth="150.0" text="Album" />
+                              <TableColumn fx:id="durationColumn" prefWidth="80.0" text="Duration" />
+                              <TableColumn fx:id="playedAtColumn" prefWidth="150.0" text="Played At" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            
+            <Tab fx:id="topArtistsTab" text="👑 Top Artists">
+               <content>
+                  <VBox spacing="15.0" styleClass="data-container">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <Label styleClass="section-title" text="👑 Your Top Artists" />
+                           <ComboBox fx:id="artistTimeRangeCombo" styleClass="modern-combo" />
+                           <ComboBox fx:id="artistLimitCombo" styleClass="modern-combo" />
+                           <Button fx:id="refreshArtistsButton" styleClass="refresh-button" mnemonicParsing="false" text="🔄 Refresh" />
+                        </HBox>
+                        <TableView fx:id="topArtistsTable" styleClass="modern-table">
+                           <columns>
+                              <TableColumn fx:id="artistNameColumn2" prefWidth="200.0" text="Artist Name" />
+                              <TableColumn fx:id="artistGenresColumn" prefWidth="250.0" text="Genres" />
+                              <TableColumn fx:id="artistPopularityColumn" prefWidth="100.0" text="Popularity" />
+                              <TableColumn fx:id="artistFollowersColumn" prefWidth="120.0" text="Followers" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            
+            <Tab fx:id="topTracksTab" text="🎶 Top Tracks">
+               <content>
+                  <VBox spacing="15.0" styleClass="data-container">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <Label styleClass="section-title" text="🎶 Your Top Tracks" />
+                           <ComboBox fx:id="trackTimeRangeCombo" styleClass="modern-combo" />
+                           <ComboBox fx:id="trackLimitCombo" styleClass="modern-combo" />
+                           <Button fx:id="refreshTracksButton" styleClass="refresh-button" mnemonicParsing="false" text="🔄 Refresh" />
+                        </HBox>
+                        <TableView fx:id="topTracksTable" styleClass="modern-table">
+                           <columns>
+                              <TableColumn fx:id="trackNameColumn2" prefWidth="200.0" text="Track Name" />
+                              <TableColumn fx:id="trackArtistColumn" prefWidth="150.0" text="Artist" />
+                              <TableColumn fx:id="trackAlbumColumn" prefWidth="150.0" text="Album" />
+                              <TableColumn fx:id="trackDurationColumn" prefWidth="100.0" text="Duration" />
+                              <TableColumn fx:id="trackPopularityColumn" prefWidth="100.0" text="Popularity" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            
+            <Tab fx:id="userProfileTab" text="👤 Profile">
+               <content>
+                  <ScrollPane fitToWidth="true" fitToHeight="true">
+                     <VBox fx:id="profileContainer" spacing="20.0" styleClass="profile-container">
+                        <padding>
+                           <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                        </padding>
+                        <children>
+                           <HBox alignment="CENTER_LEFT" spacing="15.0">
+                              <Label styleClass="section-title" text="👤 Your Spotify Profile" />
+                              <Button fx:id="refreshProfileButton" styleClass="refresh-button" mnemonicParsing="false" text="🔄 Refresh" />
+                           </HBox>
+                           
+                           <VBox fx:id="profileContent" spacing="20.0" styleClass="profile-content">
+                              <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                 <ImageView fx:id="profileImageView" fitHeight="120.0" fitWidth="120.0" styleClass="profile-image" />
+                                 <VBox spacing="10.0">
+                                    <Label fx:id="displayNameLabel" styleClass="profile-name" text="Display Name" />
+                                    <Label fx:id="emailLabel" styleClass="profile-detail" text="Email" />
+                                    <Label fx:id="countryLabel" styleClass="profile-detail" text="Country" />
+                                    <Label fx:id="productLabel" styleClass="profile-detail" text="Product" />
+                                 </VBox>
+                              </HBox>
+                              
+                              <VBox spacing="15.0">
+                                 <Label styleClass="subsection-title" text="📊 Account Statistics" />
+                                 <GridPane hgap="20.0" vgap="10.0" styleClass="stats-grid">
+                                    <columnConstraints>
+                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                       <VBox alignment="CENTER" spacing="5.0">
+                                          <Label fx:id="followersCountLabel" styleClass="stat-number" text="0" />
+                                          <Label styleClass="stat-label" text="Followers" />
+                                       </VBox>
+                                       <VBox alignment="CENTER" spacing="5.0">
+                                          <Label fx:id="totalTracksLabel" styleClass="stat-number" text="0" />
+                                          <Label styleClass="stat-label" text="Total Tracks" />
+                                       </VBox>
+                                       <VBox alignment="CENTER" spacing="5.0">
+                                          <Label fx:id="accountAgeLabel" styleClass="stat-number" text="N/A" />
+                                          <Label styleClass="stat-label" text="Account Age" />
+                                       </VBox>
+                                    </children>
+                                 </GridPane>
+                              </VBox>
+                              
+                              <VBox spacing="15.0">
+                                 <Label styleClass="subsection-title" text="🔗 External Links" />
+                                 <HBox spacing="15.0">
+                                    <Button fx:id="spotifyProfileButton" styleClass="link-button" mnemonicParsing="false" text="🌐 Open Spotify Profile" />
+                                 </HBox>
+                              </VBox>
+                           </VBox>
+                        </children>
+                     </VBox>
+                  </ScrollPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
